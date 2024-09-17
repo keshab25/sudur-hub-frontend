@@ -1,0 +1,486 @@
+// html like <h1> yasto haru use gareko xa vane jsx if not use <h1>, <p> ,<span> use .js
+trim unwantes data space 
+code. 
+== equal to 
+=== strictly equal
+
+
+git branch
+git add 
+git commit -m "topic"
+git push origin keshab
+
+
+
+react
+internal css:object ko form ma
+
+rcc
+rfc
+
+new component lai next ma use garda element <new component>   component: pascal(first letter capital)
+//props parametr
+
+grid in css
+12 column
+6 ui and 6 form
+
+
+//component -reusable piece of code making user interface 
+//flex property in css for in one line
+
+//props
+parent to child unidirectional 
+read only component
+-immuable (can not update)
+parent bata pathako datatype check (proptype)
+
+//high order component:as a prop parameter component line ani output pani component with adding extra fun
+
+//assets vitra images
+
+import React from "react";
+import "./Home.css";
+const Home = () => {
+
+  return (
+    <>
+      <h1 className="text-red-500 text-3xl text-center uppercase">This is my home page </h1>
+      <HOC cmp={Counter}/>
+      <HOCBLUE cmp={Counter}/>
+      <HOCGREEN cmp={Counter}/>
+    </>
+  );
+};
+const HOC = (prop)=>{
+  return<>
+  <h1 className="text-red-500"><prop.cmp/></h1>
+  </>
+}
+
+const HOCBLUE = (prop)=>{
+  return<>
+  <h1 className="text-blue-500"><prop.cmp/></h1>
+  </>
+}
+const HOCGREEN = (prop)=>{
+  return<>
+  <h1 className="text-green-500"><prop.cmp/></h1>
+  </>
+}
+
+const Counter = ()=>{
+  return(
+  <>
+  <h1>This is count me</h1>
+  </>
+  );
+};
+
+//routing -user interface easy garn in react
+react router dom :3 component -browserrouter as router(ural change garxa)-change url
+-routes(url match vayena vane component lai render gardaian )
+-route(multiple root define garne eg home,login to="about" two props
+
+-navlink: without reload whole page navigate  :highlight your component or page eg:className="active" with active classname
+-href le chai purai page refresh
+-link(only power of navigate)
+
+Header and footer - navlink
+body -link
+//nested routing-parent route vitra arko routing 
+
+
+//customer support
+//reliable online payment
+//we believe in qality product
+//
+//shipping and 
+//return policy
+//delivery
+//prise comparision 
+//rewards program
+
+//justify-between
+//justify items in css
+//space arount from content for footer
+
+<footer className="font-sans bg-gray-200 py-8">
+        <div className="container mx-auto flex flex-wrap">
+          <div className="w-full md:w-1/4 lg:w-1/4 xl:w-1/4 px-4 mb-8">
+            <h2 className="text-gray-600 text-lg font-semibold mb-4">
+              Inside Deals and Offers !!
+            </h2>
+            <div className="flex flex-col">
+              <Link>
+                <div className="mb-2">
+                  <img
+                    src={GooglePlay}
+                    alt="Google Pay"
+                    className="h-8 md:h-12 inline rounded-md shadow-md"
+                  />
+                </div>
+              </Link>
+              <Link>
+                <div>
+                  <img
+                    src={AppStore}
+                    alt="App Store"
+                    className="h-8 md:h-12 inline rounded-md shadow-md"
+                  />
+                </div>
+              </Link>
+            </div>
+          </div>
+          <div className="w-full md:w-1/4 lg:w-1/4 xl:w-1/4 px-4 mb-8">
+            <h2 className="text-gray-600 text-lg font-semibold mb-4">Links</h2>
+            <ul className="text-gray-600">
+              <li className="mb-2 ">
+                <Link to="/about" className="hover:text-orange-400 no-underline">
+                  About Us
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link to="" className="hover:text-orange-400 no-underline ">
+                  Contact Us
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link to="" className="hover:text-orange-400 no-underline">
+                  Blog
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link to="" className="hover:text-orange-400 no-underline">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link to="" className="text-gray-400 hover:text-orange-400 no-underline">
+                  Hiring
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/4 lg:w-1/4 xl:w-1/4 px-4 mb-8">
+            <h2 className="text-gray-600 text-lg font-semibold mb-4">
+              Policies
+            </h2>
+            <ul className="text-gray-600">
+              <li className="mb-2">
+                <Link to="" className="hover:text-orange-400 no-underline">
+                  Terms and Conditions
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link to="" className="hover:text-orange-400 no-underline">
+                  Return Policy
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link to="" className="hover:text-orange-400 no-underline">
+                  Data Policy
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link to="" className="hover:text-orange-400 no-underline">
+                  Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="" className="hover:text-orange-400 no-underline">
+                  G-Cash Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/4 lg:w-1/4 xl:w-1/4 px-4 mb-8">
+            <h2 className="text-gray-600 text-lg font-semibold mb-4">
+              Contact Us
+            </h2>
+            <ul className="text-gray-600">
+              <Link to="">
+                <li className="mb-2 flex items-center">
+                  <FaPhone className="mr-2 no-underline" />
+                  <span>123-456-7890/9861315260</span>
+                </li>
+              </Link>
+              <Link to="">
+                <li className="mb-2 flex items-center no-underline">
+                  <FaEnvelope className="mr-2 " />
+                  <span>info@example.com</span>
+                </li>
+              </Link>
+              <li className="flex items-center">
+                <Link>
+                  <SiFacebook className="mr-2 text-blue-500" />
+                </Link>
+                <Link>
+                  <SiTwitter className="mr-2 text-blue-700" />
+                </Link>
+                <Link>
+                  <SiInstagram className="text-red-400" />
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+
+//hooks in the reacr-react kai built in spacial fn (component ma state find garn)-fn component dont have their own internal state -used to make site dynamic
+so hooks used  (class ma already state ko concept xa so not used hooks)
+-useState:return two array of an element 
+.current value-default value
+.function-current value lai update
+-state:built in object that represent data and info inside your component/stored any data as a variable
+
+//useRef-uncontrolled compo
+-react le dom use nagara vanxa baru use prop,state
+//array iterate garn xa map method
+
+//controlled and uncontrolled= component ma  form ko value lai react ko state le controll garxa vane
+-compo ma state ko use xaina vane directly dom manipulation garxa vane 
+
+//unchanged
+slint-disable no-unused-vars */
+import React, { useRef } from 'react';
+import "./Home.css";
+const Home = () => {
+  const inputRef = useRef(null)
+  const handleClick = ()=>{
+    const value = inputRef.current.value;
+    console.log(value);
+  };
+  return (
+    <div className='text-center uppercase'>
+      <h1>This is my home page</h1>
+      <input className='border' 
+      type="text" 
+      placeholder="Enter your field"
+       ref={inputRef}
+      ></input>
+      <button onClick={handleClick}>Click</button>
+    </div>
+  )
+}
+
+export default Home
+
+//life cycle method- some method in react execute like .mount .update . and unmount
+.mount- componentdidmount-helps to added to the dom
+.update-componentdidupdate - compo ma props ra state lai update gareko vaye aafai update hunxa
+.unmount-componentwillunmount-
+yo chai class compo ko lifecycle
+
+//useEffect hook- react built hook special fn (3 tai stage aklai le handle garxa) -it works whole lifecyclemethod -to fetch API
+
+browser ma suru ma component load hunxa then hooks
+[]-conditionaly render
+
+import React, { useEffect,useState } from 'react';
+import "./Home.css";
+const Home = () => {
+  const[data,setData]=useState({});
+ 
+  useEffect(()=>{
+    const URL = "https://official-joke-api.appspot.com/random_joke";
+    fetch(URL)
+      .then((res)=> res.json())
+      .then((data)=> setData(data))
+      .catch((res)=> console.log(err));
+  });
+  return (
+    <div className=' mt-4'>
+     
+       
+    </div>
+  )
+}
+
+export default Home
+
+//clean up function -bAarambar bar dekhauna naparne lai control  garn
+//useN|avigate
+
+//pure component-browser ma component ma hune unwanted render(state and props)  lai hatauna 
+//useMemo-making component pure -value matra return  -memoized value
+
+import React, { useEffect,useMemo,useState } from 'react';
+import "./Home.css";
+import BannerPage from './banner/BannerPage';
+
+const Home = () => {
+  const [count,setCount] = useState(5)
+  const [data,setData] = useState(10);
+
+  const ans = useMemo(()=>{
+    console.log("components required")
+    return count * 5;
+    
+  })
+  
+  useMemo(() =>{
+    console.log("components rendered!");
+    return count*5;
+  })
+
+  function IncrementData(){
+    console.log("components rendered!");
+    return count*5;
+  }
+  
+  return (
+    <>
+    <h1>Count:{count}</h1>
+    <h1>Data:{data}</h1>
+    <h2>{ans}</h2>
+    <button onClick={() => setCount(count+1)}>UpdateCount</button>
+    <button onClick={() => setData(data*5)}>UpdateData</button>
+    </>
+    // <div className=' mt-4'>
+    //  <BannerPage/>
+       
+    // </div>
+  )
+}
+
+export default Home;
+
+//useCallBack - return function  : memoized function -is smaller of useMemo
+-to enhance react application 
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
+import React, { useCallback,useState } from 'react';
+import "./Home.css";
+import BannerPage from './banner/BannerPage';
+import ToDo from '../ToDo';
+
+const Home = () => {
+  const [count,setCount]= useState(0);
+  const [todos,setToDos]= useState([]);
+
+  const addToDo = useCallback(()=> {
+    setToDos((prev)=> [...prev, 'New Entry']);
+  },[todos]);
+  
+ 
+  
+  return (
+    <>
+    <div className='text-center my-2'>
+      <ToDo todos={todos} addToDo={addToDo} />
+      <div className='text-center'>
+        <hr className='h-1 w-2/4'/>
+        <div className='div'>
+          <h1 className='font-bold'>Count:{count}</h1>
+          <button onClick={()=> setCount(count+1)} className='bg-gray-700 text-white px-4 py-2 rounded'>update count</button>
+        </div>
+      </div>
+    </div>
+     {/* <div className=' mt-4'>
+     <BannerPage/>
+       
+    </div> */}
+    </>
+   
+  )
+}
+
+export default Home;
+
+
+import React, { useCallback,useState } from 'react';
+import "./Home.css";
+import BannerPage from './banner/BannerPage';
+
+
+const Home = () => {
+  const [LoggedInFirst, setLoggedInFirst] = useState(false)
+  return (
+    <>
+    {LoggedInFirst ? (
+      <div>
+        <h1>Welcome user!</h1>
+    <button onClick={()=> setLoggedInFirst(false)}>Logout</button>
+      </div>
+    ) : (
+      <div>
+        <h1>Please login first</h1>
+    <button onClick={()=> setLoggedInFirst(true)}>Login</button>
+      </div>
+    )}
+    
+
+    
+     {/* <div className=' mt-4'>
+     <BannerPage/>
+       
+    </div> */}
+    </>
+   
+  )
+}
+
+export default Home;
+//babal amazon prime
+// state management -react ko data lai manipulate
+//useContext- contextApi (barambar context provide garnu parne hunxa -for small scaler(sano project ko lagi)
+ -provider le saman puryaidine in state management
+ before use : Redux-external library(state management) -js ko state management
+//useContext and Redux
+
+props drilling -situation compo to compo data props use gari transfer garda aaune problem (parent to child)
+.state management - react ko sabai state lai manage
+
+- html ma small letter ma but jsx ra react ma camelcase 
+eg: onClick ,onSubmit
+
+//data flow -parent to child
+
+
+//axios - http methods lai consize way ma (main feature u le aafaile json ma convert gardinxa)
+//cors -rrefers sharing origins (yeuta domain bata arko domain ma data transfer garda kheri browser le roknu for security 
+-cross origin by cors policy
+//to remo
+
+//redux-: is a state management
+it serves a centralized store to manage the all states of react application (state vaneko ni data)
+: stoare bata component ma data pathaune subscription(read only)- update garn mildain data
+:Reducers - js ko special fn jasle store ma vayeko info lai update garxa
+:actions - components le action call garxa with dispatch and reducers ma janxa 
+
+//redux and react-redux are not same 
+.react-redux : -only use in react
+  - to reduce unwanted boiler code /simplify the code 
+.useSelector :hook to access the store of all state 
+.useDispatch:hook use to triggered the function or actions
+.provider: component use to trasfer the datas in whole react applications
+
+//redux-toolkit:  
+-createSlice : define reducer,action and state
+-createAsynThunk :
+-configureStore : it makes store in react application
+
+//redux use garda thunk middleware kina use garxan :to handle aysnc operations (js le responce lai weight garera basdain)
+thunk le wait garauxa
+
+
+
+//createAsyncthunk - two argument 1)action 2)async
+
+//promioce - is js obj
+3 states: pendind, fullfill,reject
+
+//builder -switch ko alternative
+//react ma state lai directly change garn mildain (possible due to immer library of redux-toolkit)
+
+#useParams - to use to check id
+
+//interceptors in reactjs
+#axious: local storage vitra token xa vane pathaidine headers bata
+verify:backend
+
+//binary ra text sangai data send garda multipart (form data pathaune)
+//multipart form data - file and text
