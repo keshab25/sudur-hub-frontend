@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import Loader from "../../components/layout/loader/Loader";
 import { clearError, singleProduct } from "../../redux/features/productSlice";
 import ReactStars from "react-rating-stars-component";
+import MyContext from "../../context/Context";
+import myKey from "./KhaltiKey.jsx";
+import KhaltiCheckout from "khalti-checkout-web";
 const ProductDetails = () => {
+  const {count,updateCount}=useContext(MyContext);
   const [quantity,setQuantity]= useState(0);
   const { product, loading, error } = useSelector((state) => state.product);
   const options = {
@@ -27,6 +31,46 @@ const ProductDetails = () => {
     }
     dispatch(singleProduct(id));
   }, [dispatch, error, id]);
+  let config = {
+    // replace this key with yours
+    "publicKey": "test_public_key_ed99a724e11a41d4bffa9998f4afc113",
+    "productIdentity": "1234567890",
+    "productName": "Drogon",
+    "productUrl": "http://gameofthrones.com/buy/Dragons",
+    "eventHandler": {
+        onSuccess (payload) {
+            // hit merchant api for initiating verfication
+            console.log(payload);
+        },
+        // onError handler is optional
+        onError (error) {
+            // handle errors
+            console.log(error);
+        },
+        onClose () {
+            console.log('widget is closing');
+        }
+    },
+    "paymentPreference": ["KHALTI", "EBANKING","MOBILE_BANKING", "CONNECT_IPS", "SCT"],
+};
+
+// let checkout = new KhaltiCheckout(config);
+// let btn = document.getElementById("payment-button");
+// btn.onclick = function () {
+//     // minimum transaction amount must be 10, i.e 1000 in paisa.
+//     checkout.show({amount: 1000});
+// }
+
+
+let checkout = new KhaltiCheckout(config);
+let buttonStyles = {
+  backgroundColor: "purple",
+  padding: "10px",
+  color: "white",
+  cursor: "pointer",
+  fontWeight: "bold",
+  border: "1px solid white",
+};
 
   return (
     <>
@@ -66,14 +110,27 @@ const ProductDetails = () => {
               </div>
               <div>
         <label for="points">Qty:</label>
-      <input type="number" value={quantity} onChange={(e)=>setQuantity(parseInt(e.target.value))} id="points" name="points" step="1" className='border-2 rounded my-2'></input>
+      <input type="number" value={quantity} onChange={
+        (e)=>{
+          if(parseInt(e.target.value)>=0){
+            setQuantity(parseInt(e.target.value))
+          }
+          
+          }} 
+          id="points" name="points" step="1" className='border-2 rounded my-2'></input>
       </div>
       <div className='flex justify-start my-2'>
-      <button className='bg-red-600 rounded px-2 mx-2 py-1 w-40 hover:bg-red-500'>
+      <button onClick={()=>updateCount(count+quantity)} className='bg-red-600 rounded px-2 mx-2 py-1 w-40 hover:bg-red-500'>
         Add To Cart
         </button>
-      <button className='bg-green-500 rounded px-2 mx-2 py-1 w-40 '>
+      {/* <button  className='bg-green-500 rounded px-2 mx-2 py-1 w-40 '>
         Buy Now
+        </button> */}
+        <button
+          onClick={() => checkout.show({ amount:((product.price)*100*quantity)})}
+          style={buttonStyles}
+        >
+          Pay Via Khalti
         </button>
       </div>
             </div>

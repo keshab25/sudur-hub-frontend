@@ -9,9 +9,9 @@ import { NavLink } from "react-router-dom";
 import MyContext from "../../context/Context";
 
 const Header = () => {
-  // const {count,updateCount}= useContext(MyContext);
-  const count= useContext(MyContext);
-  console.log(count);
+  const {count,updateCount}= useContext(MyContext);
+  // const count= useContext(MyContext);
+  // console.log(count);
   return (
     <>
       <div className='flex justify-between border-30 m-30 ...'>
